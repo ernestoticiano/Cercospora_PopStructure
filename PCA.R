@@ -1,8 +1,8 @@
-library(vcfR)
-library(poppr)
-library(ape)
-library(RColorBrewer)
-library(ggplot2)
+library("vcfR")
+library("poppr")
+library("ape")
+library("RColorBrewer")
+library("ggplot2")
 
 # set wd
 setwd("~/Desktop/GWS")
