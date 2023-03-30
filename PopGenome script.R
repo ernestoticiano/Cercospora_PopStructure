@@ -32,12 +32,38 @@ ernesto.popgenome <- concatenate.regions(ernesto.popgenome)
 ernesto.popgenome <- F_ST.stats(ernesto.popgenome)
 
 get.F_ST(ernesto.popgenome)
+haplotype.F_ST nucleotide.F_ST Nei.G_ST Hudson.G_ST  Hudson.H_ST Hudson.K_ST
+[1,]    0.005965035      0.07878042 0.047143 0.007358896 -0.009465163   0.1905701
+
 ernesto.popgenome@nuc.F_ST.pairwise
+[,1]
+pop1/pop2  0.141712548
+pop1/pop3  0.135701323
+pop1/pop4  0.150406615
+pop1/pop5  0.115403313
+pop1/pop6  0.140124389
+pop1/pop7  0.127948118
+pop2/pop3  0.078958895
+pop2/pop4  0.066364444
+pop2/pop5  0.037871334
+pop2/pop6 -0.020841273
+pop2/pop7  0.151446851
+pop3/pop4  0.030302748
+pop3/pop5 -0.022273517
+pop3/pop6  0.077377853
+pop3/pop7  0.025351359
+pop4/pop5  0.008280698
+pop4/pop6  0.054451896
+pop4/pop7  0.084679507
+pop5/pop6  0.014329218
+pop5/pop7  0.013797886
+pop6/pop7  0.145810229
 
 #Tajima.D
 ernesto.popgenome <- neutrality.stats(ernesto.popgenome)
 ernesto.popgenome@Tajima.D
-
+    pop 1      pop 2     pop 3      pop 4     pop 5      pop 6      pop 7
+[1,] -0.1450477 -0.3252757 0.4941781 0.05172002 0.2218122 -0.1618292 -0.2986048
 
 #tree
 ernesto.popgenome_tree <- readData("VCF_Ernesto", format="VCF", include.unknown=TRUE)
@@ -51,11 +77,21 @@ ernesto.popgenome_tree <- set.populations(ernesto.popgenome_tree, list(
 ernesto.popgenome_tree <- concatenate.regions(ernesto.popgenome_tree)
 ernesto.popgenome_tree <- F_ST.stats(ernesto.popgenome_tree)
 
+get.F_ST(ernesto.popgenome_tree)
+haplotype.F_ST nucleotide.F_ST  Nei.G_ST Hudson.G_ST Hudson.H_ST Hudson.K_ST
+[1,]        0.16967        0.409577 0.1467245  0.07895315  0.04281498 -0.04701526
+
+ernesto.popgenome_tree@nuc.F_ST.pairwise
+    [,1]
+pop1/pop2 0.4051551
+pop1/pop3 0.4687128
+pop2/pop3 0.3512197
 
 #Tajima.D
-ernesto.popgenome_tree <- neutrality.stats(ernesto.popgenome)
-ernesto.popgenome_tree@Tajima.
-
+ernesto.popgenome_tree <- neutrality.stats(ernesto.popgenome_tree)
+ernesto.popgenome_tree@Tajima.D
+pop 1     pop 2 pop 3
+[1,] -0.615441 -0.320996   NaN
 
 
 
